@@ -1,0 +1,57 @@
+name: CI/CD Java Server Deployment
+
+on:
+    push:
+        branches: [master]
+
+jobs:
+    Test:
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [14.x]
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+              run: |
+                cd app/maze-runner-game
+
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v3
+              with:
+                  node-version: ${{ matrix.node-version }}
+
+            - name: Install dependencies
+              uses: borales/actions-yarn@v4
+              with:
+                  cmd: build
+
+    Deploy:
+        needs: Test
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v3
+            - name: Deploy in EC2
+              env:
+                  PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY  }}
+                  HOSTNAME: ${{ secrets.HOSTNAME  }}
+                  USERNAME: ${{ secrets.USERNAME  }}
+
+              run: |
+                  echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+                  ssh -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${HOSTNAME} '
+
+                    #Now we have got the access of EC2 and we will start the deploy .
+                    cd maze-runner &&
+                    git checkout master &&
+                    git fetch --all &&
+                    git reset --hard origin/master &&
+                    git pull origin master &&
+                    cd app/maze-runner-game &&
+                    yarn build &&
+                    cd ../../ &&
+                    java -jar build/libs/maze-runner-0.0.1-SNAPSHOT.jar
+                  '
