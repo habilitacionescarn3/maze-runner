@@ -1,0 +1,139 @@
+# flyctl launch added from .gitignore
+**/HELP.md
+**/.gradle
+**/build
+!**/gradle/wrapper/gradle-wrapper.jar
+!**/**/src/main/**/build
+!**/**/src/test/**/build
+
+### STS ###
+**/.apt_generated
+**/.classpath
+**/.factorypath
+**/.project
+**/.settings
+**/.springBeans
+**/.sts4-cache
+**/bin
+!**/**/src/main/**/bin
+!**/**/src/test/**/bin
+
+### IntelliJ IDEA ###
+**/.idea
+**/*.iws
+**/*.iml
+**/*.ipr
+**/out
+!**/**/src/main/**/out
+!**/**/src/test/**/out
+
+### NetBeans ###
+nbproject/private
+nbbuild
+dist
+nbdist
+.nb-gradle
+
+### VS Code ###
+**/.vscode
+**/.DS_Store
+
+# flyctl launch added from .idea/.gitignore
+# Default ignored files
+.idea/shelf
+.idea/workspace.xml
+# Editor-based HTTP Client requests
+.idea/httpRequests
+# Datasource local storage ignored files
+.idea/dataSources
+.idea/dataSources.local.xml
+
+# flyctl launch added from app/maze-runner-game/.gitignore
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+app/maze-runner-game/node_modules
+app/maze-runner-game/.pnp
+app/maze-runner-game/**/.pnp.js
+
+# testing
+app/maze-runner-game/coverage
+
+# production
+app/maze-runner-game/build
+
+# misc
+app/maze-runner-game/**/.DS_Store
+app/maze-runner-game/**/.env.local
+app/maze-runner-game/**/.env.development.local
+app/maze-runner-game/**/.env.test.local
+app/maze-runner-game/**/.env.production.local
+
+app/maze-runner-game/**/npm-debug.log*
+app/maze-runner-game/**/yarn-debug.log*
+app/maze-runner-game/**/yarn-error.log*
+
+# flyctl launch added from bin/.gitignore
+bin/**/HELP.md
+bin/**/.gradle
+bin/**/build
+!bin/**/gradle/wrapper/gradle-wrapper.jar
+!bin/**/**/src/main/**/build
+!bin/**/**/src/test/**/build
+
+### STS ###
+bin/**/.apt_generated
+bin/**/.classpath
+bin/**/.factorypath
+bin/**/.project
+bin/**/.settings
+bin/**/.springBeans
+bin/**/.sts4-cache
+bin/**/bin
+!bin/**/**/src/main/**/bin
+!bin/**/**/src/test/**/bin
+
+### IntelliJ IDEA ###
+bin/**/.idea
+bin/**/*.iws
+bin/**/*.iml
+bin/**/*.ipr
+bin/**/out
+!bin/**/**/src/main/**/out
+!bin/**/**/src/test/**/out
+
+### NetBeans ###
+bin/nbproject/private
+bin/nbbuild
+bin/dist
+bin/nbdist
+bin/.nb-gradle
+
+### VS Code ###
+bin/**/.vscode
+
+# flyctl launch added from bin/app/maze-runner-game/.gitignore
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+bin/app/maze-runner-game/node_modules
+bin/app/maze-runner-game/.pnp
+bin/app/maze-runner-game/**/.pnp.js
+
+# testing
+bin/app/maze-runner-game/coverage
+
+# production
+bin/app/maze-runner-game/build
+
+# misc
+bin/app/maze-runner-game/**/.DS_Store
+bin/app/maze-runner-game/**/.env.local
+bin/app/maze-runner-game/**/.env.development.local
+bin/app/maze-runner-game/**/.env.test.local
+bin/app/maze-runner-game/**/.env.production.local
+
+bin/app/maze-runner-game/**/npm-debug.log*
+bin/app/maze-runner-game/**/yarn-debug.log*
+bin/app/maze-runner-game/**/yarn-error.log*
+fly.toml
